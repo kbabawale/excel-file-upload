@@ -1,0 +1,82 @@
+<div class="my-5 container d-flex flex-column align-items-center">
+  <h2 class="align-self-start text-info">Halogen Assessment</h2>
+  <a href="./../assets/halogenformat.xlsx" download="halogenformat.xlsx" class="align-self-end btn btn-secondary"
+    type="button">
+    <span>Download Excel Format</span>
+  </a>
+  <fieldset class="border p-2 w-100">
+    <legend class="float-none w-auto">Input</legend>
+    <div class="d-flex w-100 ">
+      <div class=" d-flex flex-column w-50">
+        <span>Input file:</span>
+        <button (click)="file.click()" type="button" class="mt-2 text-08 w-25 btn btn-outline-secondary">Click to select
+          file</button>
+        <input (change)="loadFile($event)"
+          accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" #file
+          class="d-none" type="file" />
+
+        <div class="mt-3">File selected: <span
+            class="text-decoration-underline text-warning">{{uploadedFileName}}</span> </div>
+        <div class="btn-group mt-3 w-60" role="group" aria-label="Basic example">
+          <button type="button" (click)="UploadFile()" class="btn btn-outline-secondary text-08">Upload File</button>
+          <button type="button" (click)="UploadFile()" class="btn btn-outline-success text-08">Process Request</button>
+          <button type="button" (click)="setAsNull()" class="btn btn-outline-danger text-08">Cancel/Refresh</button>
+        </div>
+      </div>
+      <div class="card w-50 ">
+        <div class="card-header">
+          <span>Special Output</span>
+        </div>
+        <div class="card-body">
+          <span>Number of columns if you were to rearrage numbers in columns, with a maximum of 3 numbers per column,
+            and
+            only numbers divisible by 9 can participate in each column</span>
+          <input type="text" class="mt-2 form-control" />
+        </div>
+      </div>
+
+    </div>
+  </fieldset>
+  <fieldset class="border p-2 w-100">
+    <legend class="float-none w-auto">Output</legend>
+    <div class="d-flex w-100 ">
+      <div class=" d-flex flex-column w-100">
+        <div class="alert alert-info">Please note that all outputs are separated by comma if output is more than 1</div>
+        <table class="table table-sm text-center">
+          <tr>
+            <td width="15%">Even numbers</td>
+            <td width=""><input type="text" [value]="evenNumbers" class="form-control" /></td>
+            <td width="15%">Mode</td>
+            <td width=""><input type="text" class="form-control" /></td>
+          </tr>
+          <tr>
+            <td width="15%">Odd numbers</td>
+            <td width=""><input type="text" [value]="oddNumbers" class="form-control" /></td>
+            <td width="15%">Mean</td>
+            <td width=""><input type="text" [value]="mean" class="form-control" /></td>
+          </tr>
+          <tr>
+            <td width="15%">Numbers divisible by 3</td>
+            <td width=""><input type="text" [value]="numbersDivisibleBy5" class="form-control" /></td>
+            <td width="15%">AVG</td>
+            <td width=""><input type="text" [value]="average" class="form-control" /></td>
+          </tr>
+          <tr>
+            <td width="15%">Numbers divisible by 5</td>
+            <td width=""><input type="text" [value]="numbersDivisibleBy5" class="form-control" /></td>
+            <td width="15%">Median</td>
+            <td width=""><input type="text" [value]="median" class="form-control" /></td>
+          </tr>
+          <tr>
+            <td width="15%">Numbers divisible by 7</td>
+            <td width=""><input type="text" [value]="numbersDivisibleBy7" class="form-control" /></td>
+            <td width="15%">Sum</td>
+            <td width=""><input type="text" [value]="sum" class="form-control" /></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<ngx-loading-bar></ngx-loading-bar>
