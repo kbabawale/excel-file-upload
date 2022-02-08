@@ -60,7 +60,6 @@ export class AppComponent implements OnInit {
     if (!this.formData || this.uploadedFileName == '____') {
       alert('Upload a file');
     } else {
-      // let response: ResponseObj = await fetch('/api/FileUpload/upload', {
       let response: ResponseObj = await fetch('https://glacial-taiga-43222.herokuapp.com/https://halogen-netcore.herokuapp.com/api/FileUpload/upload', {
         method: 'POST',
         body: this.formData
