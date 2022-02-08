@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingBarService } from '@ngx-loading-bar/core';
 import { ResponseObj } from './model/response';
-import { HttpserviceService } from './service/httpservice.service';
 
 @Component({
   selector: 'app-root',

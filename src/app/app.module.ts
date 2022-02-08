@@ -5,7 +5,6 @@ import { LoadingBarModule } from '@ngx-loading-bar/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpserviceService } from './service/httpservice.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +16,7 @@ import { HttpserviceService } from './service/httpservice.service';
     LoadingBarModule,
     AppRoutingModule
   ],
-  providers: [HttpserviceService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
